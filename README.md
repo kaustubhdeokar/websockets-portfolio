@@ -7,9 +7,5 @@ Supports Group messages, private messages.
 
 Stack - 
 Backend spring boot, client jquery. websockets - SockJs, using stomp protocol for messaging.
-![](./websockets.mp4)
 
-
-[![](./websockets.mp4)](./websockets.mp4)
-
-
+Video link : [https://www.youtube.com/watch?v=jx4RZ_aBMKc](https://youtu.be/jx4RZ_aBMKc)
