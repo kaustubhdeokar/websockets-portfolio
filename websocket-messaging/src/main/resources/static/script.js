@@ -23,6 +23,8 @@ function connect() {
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
+
+        stompClient.send("/ws/entry", {}, JSON.stringify({}));
         // updateNotificationDisplay();
         stompClient.subscribe('/topic/messages', function (message) {
             showMessage(JSON.parse(message.body).content);
