@@ -63,6 +63,15 @@ angular.module('springChat.controllers', ['toaster'])
                     $scope.messages.unshift(JSON.parse(message.body));
                 });
 
+                chatSocket.subscribe("/user/exchange/amq.direct/chat.message", function(message) {
+                    var parsed = JSON.parse(message.body);
+                    parsed.priv = true;
+                    $scope.messages.unshift(parsed);
+                });
+
+                chatSocket.subscribe("/user/exchange/amq.direct/errors", function(message) {
+                    toaster.pop('error', "Error", message.body);
+                });
 
             }, function (error) {
                 toaster.pop('error', 'Error', 'Connection error ' + error);

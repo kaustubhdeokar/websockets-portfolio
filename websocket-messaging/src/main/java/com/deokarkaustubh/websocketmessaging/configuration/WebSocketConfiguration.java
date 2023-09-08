@@ -1,6 +1,5 @@
 package com.deokarkaustubh.websocketmessaging.configuration;
 
-import com.deokarkaustubh.websocketmessaging.UserHandshakeHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -14,7 +13,6 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/websocket-point")
-                .setHandshakeHandler(new UserHandshakeHandler())
                 .withSockJS();
     }
 
