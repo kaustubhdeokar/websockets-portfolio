@@ -2,19 +2,18 @@
 > Event driven, messaging architecture. 
 
 What is WebSocket ?
-> A layer over TCP.
-> Full duplex (both parties sending data at the same time), stateful connection. 
+> A layer over HTTP which on built on top of TCP.
+> Full duplex (both parties sending data at the same time), stateful connection. (Needs to establish connection again - after server restarted hence stateful).
 > Stream of messages sent rather than bytes.
 > HTTP used only for initial handshake.
 
 > ws is the web socket protocol, the use of ws protocol requires client & server to be able to support it.
-> sockjs emulates websockets in the sense if the client/server wouldn't support ws it would use any of the fallback mechanisms available.
+> <strong>Sockjs</strong> emulates websockets in the sense if the client/server wouldn't support ws it would use any of the fallback mechanisms available.
 ![fallback options for sockjs](./fallback.png) 
 
 protocol wss is preferred and should be used over ws. (wss stands for secure web socket) is similar to http & https.
 
 STOMP. 
-
 Simple protocol for asynchronous messaging.
 Supported by all messaging brokers. (Rabbit MQ, ActiveMQ)
 
